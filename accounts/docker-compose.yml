@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  accounts:
+    image: dipakg007/accounts
+    ports:
+      - "8080:8080"
+    networks:
+      - bank-network
+
+  cards:
+    image: dipakg007/cards
+    ports:
+      - "9000:9000"
+    networks:
+      - bank-network
+
+  loans:
+    image: dipakg007/loans
+    ports:
+      - "8090:8090"
+    networks:
+      - bank-network
+
+networks:
+  bank-network:
