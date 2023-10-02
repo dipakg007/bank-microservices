@@ -1,7 +1,5 @@
 # Bank Microservices Project
 
-![Bank Microservices](https://github.com/dipakg007/bank-microservices/blob/main/bank-microservices.png)
-
 Welcome to the Bank Microservices project! This repository houses a collection of microservices designed to manage various aspects of a bank's operations. Each microservice is containerized using Docker and orchestrated using Docker Compose for easy development, testing, and deployment.
 
 ## Project Overview
@@ -10,12 +8,10 @@ The Bank Microservices project aims to demonstrate the benefits of a microservic
 
 ### Microservices Included
 
-1. **Account Service**: Manages customer bank accounts and transactions.
-2. **Customer Service**: Handles customer registration, authentication, and profile management.
-3. **Transaction Service**: Records and processes financial transactions.
-4. **Notification Service**: Sends notifications to customers for various banking activities.
-5. **Eureka Server**: Service discovery server to help microservices find and communicate with each other.
-6. **Zuul Gateway**: API gateway to manage routing and access to microservices.
+1. **Accounts Service**: Manages customer bank accounts.
+2. **Cards Service**: Handles Cards registration, authentication, and profile management.
+3. **Loans Service**: Handles Loans registration, authentication, and profile management.
+4. **Config Service**: To externalize the configuration
 
 ## Getting Started
 
@@ -32,6 +28,13 @@ git clone https://github.com/dipakg007/bank-microservices.git
 cd bank-microservices
 ```
 
+### Navigate to docker env folder
+
+```bash
+cd docker-compose 
+cd [default/qa/prod]
+```
+
 ### Run the Microservices
 
 Use Docker Compose to spin up all the microservices:
@@ -40,11 +43,18 @@ Use Docker Compose to spin up all the microservices:
 docker-compose up -d
 ```
 
-This command will create Docker containers for each microservice and start them in the background.
+This command will create Docker containers for each microservice and start them in the background. Wait for around 5min to get all the services up.
 
 ### Access the Microservices
 
 Once the containers are up and running, you can access the microservices via their respective endpoints. Refer to the individual microservices' documentation for API endpoints and usage details.
+
+### Below are the end points to access all the microservices 
+
+1. [accounts-service](http://localhost:8080/swagger-ui/index.html)
+2. [loans-service](http://localhost:8090/swagger-ui/index.html)
+3. [cards-service](http://localhost:9000/swagger-ui/index.html)
+
 
 ### Cleanup
 
@@ -54,14 +64,3 @@ To stop and remove the containers:
 docker-compose down
 ```
 
-## Contributing
-
-We welcome contributions from the community. If you find issues or want to enhance the project, please submit pull requests or open issues on the GitHub repository.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-Happy microservice banking! 🏦🚀
-
-For more information, visit the [GitHub repository](https://github.com/dipakg007/bank-microservices).
